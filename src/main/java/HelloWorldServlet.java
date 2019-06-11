@@ -9,18 +9,18 @@ import java.io.PrintWriter;
 @WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello-world")
 public class HelloWorldServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response){
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("text/html");
 
 //        System.out.println(name);
 
         try {
             PrintWriter out = response.getWriter();
-            String name = "world";
-            if (request.getParameter("name") != null){
+            String name = "Mundo";
+            if (request.getParameter("name") != null) {
                 name = request.getParameter("name");
             }
-            out.println("Hello "+ name + "!!!");
+            out.println("<h1>Hello " + name + "!!!</h1>");
 
 
         } catch (IOException e) {
